@@ -36,3 +36,67 @@
     transform: rotate(360deg);
   }
 }
+
+.typewriter {
+  width: max-content;
+}
+
+.surname {
+  color: #ffb84f;
+}
+
+.typewriter .writed1 {
+  display: inline-block;
+  overflow: hidden;
+  border-right: .15em solid #ffffff00;
+  white-space: nowrap;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  letter-spacing: .15em;
+  animation: 
+    typing1 2.5s steps(14) 1s 1 both,
+    blink-caret2 .75s step-end 5;
+}
+.typewriter .writed2 {
+  display: inline-block;
+  overflow: hidden;
+  border-right: .15em solid #ffffff00;
+  white-space: nowrap;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  letter-spacing: .15em;
+  animation: 
+    typing1 2s steps(7) 3.50s 1 both,
+    blink-caret2 .75s 3.50s step-end 3;
+}
+
+.typewriter .writed3 {
+  display: inline-block;
+  overflow: hidden;
+  border-right: .15em solid #ffb94f00;
+  white-space: nowrap;
+  margin: 0 auto;
+  margin-bottom: 0.7em;
+  font-size: 5em;
+  letter-spacing: .15em;
+  animation: 
+    typing1 2s steps(8) 5.50s 1 both,
+    blink-caret1 .75s 5.50s step-end infinite;
+}
+
+
+/* The typing effect */
+@keyframes typing1 {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret1 {
+  from, to { border-color: transparent }
+  50% { border-color: #ffb84f; }
+}
+@keyframes blink-caret2 {
+  from, to { border-color: transparent }
+  50% { border-color: var(--secondary); }
+}
