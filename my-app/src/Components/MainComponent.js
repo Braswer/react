@@ -4,11 +4,7 @@ import Home from "./HomeComponent";
 import Web from "./WebsiteComponent";
 import SkillBoard from "./SkillsComponent";
 import Experiences from "./ExperienceComponent";
-import { DEVELOPSKILLS } from '../shared/developskills';
-import { CMSSKILLS } from '../shared/cmsskills';
-import { LANGSKILLS } from '../shared/langskills';
-import { MORESKILLS } from "../shared/moreskills";
-import { COMINGSKILLS } from "../shared/comingskills";
+import { SKILLS } from '../shared/skills';
 import { EXPERIENCES } from "../shared/experiences";
 import { CERTIFICATES } from "../shared/certificates";
 import { PORTFOLIOS } from "../shared/portfolio"
@@ -19,11 +15,7 @@ class Main extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          developskills: DEVELOPSKILLS,
-          cmsskills: CMSSKILLS,
-          langskills: LANGSKILLS,
-          moreskills: MORESKILLS,
-          comingskills: COMINGSKILLS,
+          skills: SKILLS,
           experiences: EXPERIENCES,
           certificates: CERTIFICATES,
           portfolios: PORTFOLIOS
@@ -46,11 +38,7 @@ class Main extends Component {
 
         const Skillslist = () => {
             return (
-                <SkillBoard developskills={this.state.developskills} 
-                    cmsskills={this.state.cmsskills}
-                    langskills={this.state.langskills} 
-                    moreskills={this.state.moreskills}
-                    comingskills={this.state.comingskills} />
+                <SkillBoard skills={this.state.skills} />
             )
         }
 

@@ -1,74 +1,74 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle, CardBody } from 'reactstrap';
 
 class SkillBoard extends Component {
 
     render() {
-        const skilldevelop = this.props.developskills.map((developskill) => {
+        const develop = this.props.skills.filter(skill => skill.category === 'Develop').map((skill) => {
             return (
-                <div key={developskill.id} className='col-12 col-md-5 m-1'>
+                <div key={skill.id} className='col-12 col-md-5 m-1'>
                     <Card>
-                        <CardImg width='100%' src={developskill.image} alt={developskill.name} />
+                        <CardImg width='100%' src={skill.image} alt={skill.name} />
                         <CardImgOverlay body className="ml-5">
-                            <CardBody>{developskill.level}</CardBody>
+                            <CardBody>{skill.level}</CardBody>
                         </CardImgOverlay>
-                        <CardTitle><strong>{developskill.name}</strong></CardTitle>
+                        <CardTitle><strong>{skill.name}</strong></CardTitle>
                     </Card>
                 </div>
             );
         });
 
-        const skillcms = this.props.cmsskills.map((cmsskill) => {
+        const cms = this.props.skills.filter(skill => skill.category === 'CMS').map((skill) => {
             return (
-                <div key={cmsskill.id} className='col-12 col-md-5 m-1'>
+                <div key={skill.id} className='col-12 col-md-5 m-1'>
                     <Card>
-                        <CardImg width='100%' src={cmsskill.image} alt={cmsskill.name} />
+                        <CardImg width='100%' src={skill.image} alt={skill.name} />
                         <CardImgOverlay body className="ml-5">
-                            <CardBody>{cmsskill.level}</CardBody>
+                            <CardBody>{skill.level}</CardBody>
                         </CardImgOverlay>
-                        <CardTitle><strong>{cmsskill.name}</strong></CardTitle>
+                        <CardTitle><strong>{skill.name}</strong></CardTitle>
                     </Card>
                 </div>
             );
         });
 
-        const skilllang = this.props.langskills.map((langskill) => {
+        const lang = this.props.skills.filter(skill => skill.category === 'Lang').map((skill) => {
             return (
-                <div key={langskill.id} className='col-12 col-md-5 m-1'>
+                <div key={skill.id} className='col-12 col-md-5 m-1'>
                     <Card>
-                        <CardImg width='100%' src={langskill.image} alt={langskill.name} />
+                        <CardImg width='100%' src={skill.image} alt={skill.name} />
                         <CardImgOverlay body className="ml-5">
-                            <CardBody>{langskill.level}</CardBody>
+                            <CardBody>{skill.level}</CardBody>
                         </CardImgOverlay>
-                        <CardTitle><strong>{langskill.name}</strong></CardTitle>
+                        <CardTitle><strong>{skill.name}</strong></CardTitle>
                     </Card>
                 </div>
             );
         });
 
-        const skillmore = this.props.moreskills.map((moreskill) => {
+        const more = this.props.skills.filter(skill => skill.category === 'More').map((skill) => {
             return (
-                <div key={moreskill.id} className='col-12 col-md-5 m-1'>
+                <div key={skill.id} className='col-12 col-md-5 m-1'>
                     <Card>
-                        <CardImg width='100%' src={moreskill.image} alt={moreskill.name} />
+                        <CardImg width='100%' src={skill.image} alt={skill.name} />
                         <CardImgOverlay body className="ml-5">
-                            <CardBody>{moreskill.level}</CardBody>
+                            <CardBody>{skill.level}</CardBody>
                         </CardImgOverlay>
-                        <CardTitle><strong>{moreskill.name}</strong></CardTitle>
+                        <CardTitle><strong>{skill.name}</strong></CardTitle>
                     </Card>
                 </div>
             );
         });
 
-        const skillcoming = this.props.comingskills.map((comingskill) => {
+        const coming = this.props.skills.filter(skill => skill.category === 'Coming').map((skill) => {
             return (
-                <div key={comingskill.id} className='col-12 col-md-5 m-1'>
+                <div key={skill.id} className='col-12 col-md-5 m-1'>
                     <Card>
-                        <CardImg width='100%' src={comingskill.image} alt={comingskill.name} />
+                        <CardImg width='100%' src={skill.image} alt={skill.name} />
                         <CardImgOverlay body className="ml-5">
-                            <CardBody>{comingskill.level}</CardBody>
+                            <CardBody>{skill.level}</CardBody>
                         </CardImgOverlay>
-                        <CardTitle><strong>{comingskill.name}</strong></CardTitle>
+                        <CardTitle><strong>{skill.name}</strong></CardTitle>
                     </Card>
                 </div>
             );
@@ -83,19 +83,19 @@ class SkillBoard extends Component {
                     </div>
                 </div>
                 <div className='row'>
-                    {skilldevelop}
+                    {develop}
                 </div>
                 <div className='row'>
-                    {skillcms}
+                    {cms}
                 </div>
                 <div className='row'>
-                    {skilllang}
+                    {lang}
                 </div>
                 <div className='row'>
-                    {skillmore}
+                    {more}
                 </div>
                 <div className='row'>
-                    {skillcoming}
+                    {coming}
                 </div>
             </div>
         );
