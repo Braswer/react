@@ -3,112 +3,112 @@ export const SKILLS =
         {
         id: 0,
         name:'WordPress',
-        image: '/assets/images/wordpress.svg',
+        image: '/assets/skills/wordpress.svg',
         level:'Hot',
         category: 'CMS'        
         },
         {
         id: 1,
         name:'Joomla',
-        image: '/assets/images/joomla.svg',
+        image: '/assets/skills/joomla.svg',
         level:'Hot',
         category: 'CMS'            
         },
         {
         id: 2,
         name:'WooCommerce',
-        image: '/assets/images/woo.svg',
+        image: '/assets/skills/woo.svg',
         level:'Hot',
         category: 'CMS'              
         },
         {
         id: 3,
         name:'React JS',
-        image: '/assets/images/react.svg',
+        image: '/assets/skills/react.svg',
         level:'Hot',
         category: 'Coming'              
         },
         {
         id: 4,
         name:'NodeJs',
-        image: '/assets/images/node-js.svg',
+        image: '/assets/skills/node-js.svg',
         level:'Hot',
         category: 'Coming'             
         },
         {
         id: 5,
         name:'Django',
-        image: '/assets/images/django.svg',
+        image: '/assets/skills/django.svg',
         level:'Hot',
         category: 'Coming'              
         },
         {
         id: 6,
         name:'HTML',
-        image: '/assets/images/html5.svg',
+        image: '/assets/skills/html5.svg',
         level:'Hot',
         category: 'Develop'              
         },
         {
         id: 7,
         name:'CSS',
-        image: '/assets/images/css3.svg',
+        image: '/assets/skills/css3.svg',
         level:'Hot',     
         category: 'Develop'         
         },
         {
         id: 8,
         name:'JavaScript',
-        image: '/assets/images/javascript.svg',
+        image: '/assets/skills/javascript.svg',
         level:'Hot',       
         category: 'Develop'       
         },
         {
         id: 9,
         name:'Python',
-        image: '/assets/images/python.svg',
+        image: '/assets/skills/python.svg',
         level:'Hot',
         category: 'Develop'              
         },
         {
         id: 10,
         name:'Italiano',
-        image: '/assets/images/italy.svg',
+        image: '/assets/skills/italy.svg',
         level:'Hot',
         category:'Lang'           
         },
         {
         id: 11,
         name:'Inglese',
-        image: '/assets/images/england.svg',
+        image: '/assets/skills/england.svg',
         level:'Hot',  
         category:'Lang'            
         },
         {
         id: 12,
         name:'Spagnolo',
-        image: '/assets/images/spain.svg',
+        image: '/assets/skills/spain.svg',
         level:'Hot',    
         category:'Lang'          
         },
         {
         id: 13,
         name:'HardWare',
-        image: '/assets/images/wrench.svg',
+        image: '/assets/skills/wrench.svg',
         level:'Hot', 
         category: 'More'             
         },
         {
         id: 14,
         name:'Windows',
-        image: '/assets/images/windows.svg',
+        image: '/assets/skills/windows.svg',
         level:'Hot',  
         category: 'More'             
         },
         {
         id: 15,
         name:'Linux',
-        image: '/assets/images/linux.svg',
+        image: '/assets/skills/linux.svg',
         level:'Hot',  
         category: 'More'             
         }

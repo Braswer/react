@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Home extends Component {
     render() {
         return(
-            <div className="container">
+            <div className="texts">
                 <div id="sezionepersonale" className="personal">
                     <div className="headpers typewriter">
                         <h1 className="writed1">Benvenuti, sono</h1>                       
@@ -23,8 +23,7 @@ class Home extends Component {
                             avvicinato al mondo dello sviluppo web, impegno intensificato dalla perdita del lavoro a causa del lockdown. Ho iniziato studiando i principali CMS e mi sono 
                             cimentato nella realizzazione di siti web come freelancer. Da quel momento ho capito che questo era ciò che avrei voluto fare 
                             nella vita e ho iniziato a studiare gli strumenti necessari a costruire la mia carriera come sviluppatore web. <br /><br />
-                            E questo è solo l'inizio...
-                            
+                            E questo è solo l'inizio...     
                     </div>
                 </div>
             </div>

@@ -1,40 +1,112 @@
+/* General variables and Light/dark */
 .App {
-  text-align: left;
+  --text-color: #000000;
+  --background-site: url(/public/assets/images/papyrus.png);
+  --background-popup: 92, 92, 92, 0.5; 
+  --background-navbar: #FFFFFF;
+  --border-navbar: 1px solid rgba(0, 0, 0, 0.5);
+  --primary: #ffffff;
+  --secondary: rgb(0, 0, 0);
+  --icone-ld: #ffffff00 url(/public/assets/images/sun.png);
+  --profile-border: 3px solid black;
+  --lang-border: 2px solid black;
+  --firma: url(/public/assets/images/firmalight1.svg);
+  --background-skill: #00000027;
+  --track-scrollbar: #e7e7e7;
+  --thumb-scrollbar: #ffffff;
+  --hover-scrollbar: #1b1b1b;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App.dark-theme {
+  --text-color: #ffffff;
+  --background-site: url(/public/assets/images/papyrus-dark.png);
+  --background-popup: 255, 255, 255;
+  --background-navbar: #000000;
+  --border-navbar: 1px solid rgba(255, 255, 255, 0.5);
+  --primary: #000000;
+  --secondary: #fff;
+  --icone-ld: #ffffff00 url(/public/assets/images/moon.png);
+  --profile-border: 3px solid white;
+  --lang-border: 2px solid white;
+  --firma: url(/public/assets/images/firmadark1.svg);
+  --background-skill: #ffffff27;
+  --track-scrollbar: #1b1b1b;
+  --thumb-scrollbar: #000000;
+  --hover-scrollbar: #e7e7e7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (prefers-color-scheme: dark) {
+  .App {
+      --text-color: #ffffff;
+      --background-site: url(/public/assets/images/papyrus-dark.png);
+      --background-popup: 255, 255, 255;
+      --background-navbar: #000000;
+      --border-navbar: 1px solid rgba(255, 255, 255, 0.5);
+      --primary: #000000;
+      --secondary: #fff;
+      --icone-ld: #ffffff00 url(/public/assets/images/moon.png);
+      --profile-border: 3px solid white;
+      --lang-border: 2px solid white;
+      --firma: url(/public/assets/images/firmadark1.svg);
+      --background-skill: #ffffff27;
+      --track-scrollbar: #1b1b1b;
+      --thumb-scrollbar: #000000;
+      --hover-scrollbar: #e7e7e7;
+  }
+
+  .App.light-theme {
+      --text-color: #000000;
+      --background-site: url(/public/assets/images/papyrus.png);
+      --background-popup: 92, 92, 92, 0.5; 
+      --background-navbar: #FFFFFF;
+      --border-navbar: 1px solid rgba(0, 0, 0, 0.5);
+      --primary: #ffffff;
+      --secondary: rgb(0, 0, 0); 
+      --icone-ld: #ffffff00 url(/public/assets/images/sun.png);
+      --profile-border: 3px solid black;
+      --lang-border: 2px solid black;
+      --firma: url(/public/assets/images/firmalight1.svg);
+      --background-skill: #00000027;
+      --track-scrollbar: #e7e7e7;
+      --thumb-scrollbar: #ffffff;
+      --hover-scrollbar: #1b1b1b;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App {
+  background: var(--background-site);
+  color: var(--text-color);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-position: center;
+  display: block;
+  margin: 0;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  background: var(--background-navbar);
+  border-right: var(--border-navbar);
+  width: 30%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  display: block;
+  float: left;
+  z-index: 2;
+  
+}
+
+.texts {
+  float: right;
+  width: 70%;
+  padding: 30px 70px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  z-index: 1;
 }
 
 .typewriter {
@@ -99,4 +171,129 @@
 @keyframes blink-caret2 {
   from, to { border-color: transparent }
   50% { border-color: var(--secondary); }
+}
+
+.buttons {
+  display: flex;
+  justify-content: left;
+  align-content: center;
+flex-direction: column;
+  margin-top: 50px;
+}
+
+.btn {		
+position: relative;	
+padding: 1.4rem 4.2rem;
+padding-right: 3.1rem;
+font-size: 1.4rem;
+color: var(--secondary);
+letter-spacing: 1.1rem;
+text-transform: uppercase;
+transition: all 500ms cubic-bezier(0.77, 0, 0.175, 1);	
+cursor: pointer;
+user-select: none;
+}
+
+.btn:before, .btn:after {
+content: '';
+position: absolute;	
+transition: inherit;
+z-index: -1;
+}
+
+.btn:hover {
+color: var(--primary);
+transition-delay: .5s;
+}
+
+.btn:hover:before {
+transition-delay: 0s;
+}
+
+.btn:hover:after {
+background: var(--secondary);
+transition-delay: .35s;
+}
+
+.current {
+  background: var(--secondary);
+  color: var(--primary);
+}
+
+
+/* Menù hover effect animation */
+
+.button1:before, 
+.button1::after,
+.button2:before, 
+.button2::after,
+.button3:before, 
+.button3::after,
+.button4:before, 
+.button4::after,
+.button5:before, 
+.button5::after {
+top: 0;
+width: 0;
+height: 100%;
+}
+
+.button1:before,
+.button2:before,
+.button3:before,
+.button4:before,
+.button5:before {
+left: 0;
+border: 1px solid var(--secondary);
+border-left: 0;
+border-right: 0;	
+}
+
+.button1:after,
+.button2:after,
+.button3:after,
+.button4:after,
+.button5:after {
+right: 0;
+}
+
+.button1:hover:before,
+.button1:hover:after,
+.button2:hover:before,
+.button2:hover:after,
+.button3:hover:before,
+.button3:hover:after,
+.button4:hover:before,
+.button4:hover:after,
+.button5:hover:before,
+.button5:hover:after {
+width: 100%;
+}
+
+
+*, *:before, *:after {
+box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 1300px) {
+
+  
+  .sidenav {
+      background: var(--background-navbar);
+      border-bottom: var(--border-navbar);
+      border-right: none;
+      width: 100%;
+      height: 20%;
+      backdrop-filter: blur(5px);
+      position: sticky;
+      display: block;
+  }
+
+  .texts {
+      padding-top: 40px;
+      padding-left: 1em;
+      padding-right: 1em;
+      width: 100%;
+  }
 }
