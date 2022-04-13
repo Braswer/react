@@ -11,3 +11,74 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* General variables and Light/dark */
+:root {
+  --text-color-light: #000000;
+  --background-site-light: url(/public/assets/images/papyrus.png);
+  --background-popup-light: 92, 92, 92, 0.5; 
+  --background-navbar-light: #FFFFFF;
+  --border-navbar-light: 1px solid rgba(0, 0, 0, 0.5);
+  --primary-light: #ffffff;
+  --secondary-light: rgb(0, 0, 0);
+  --icone-ld-light: #ffffff00 url(/public/assets/images/sun.png);
+  --profile-border-light: 3px solid black;
+  --lang-border-light: 2px solid black;
+  --firma-light: url(/public/assets/images/firmalight1.svg);
+  --background-skill-light: #00000027;
+  --track-scrollbar-light: #e7e7e7;
+  --thumb-scrollbar-light: #ffffff;
+  --hover-scrollbar-light: #1b1b1b;
+
+  --text-color-dark: #ffffff;
+  --background-site-dark: url(/public/assets/images/papyrus-dark.png);
+  --background-popup-dark: 255, 255, 255;
+  --background-navbar-dark: #000000;
+  --border-navbar-dark: 1px solid rgba(255, 255, 255, 0.5);
+  --primary-dark: #000000;
+  --secondary-dark: #fff;
+  --icone-ld-dark: #ffffff00 url(/public/assets/images/moon.png);
+  --profile-border-dark: 3px solid white;
+  --lang-border-dark: 2px solid white;
+  --firma-dark: url(/public/assets/images/firmadark1.svg);
+  --background-skill-dark: #ffffff27;
+  --track-scrollbar-dark: #1b1b1b;
+  --thumb-scrollbar-dark: #000000;
+  --hover-scrollbar-dark: #e7e7e7;
+}
+
+.light-theme {
+  --text-color: var(--text-color-light);
+  --background-site : var(--background-site-light);
+  --background-popup : var(--background-popup-light);
+  --background-navbar : var(--background-navbar-light);
+  --border-navbar : var(--border-navbar-light);
+  --primary : var(--primary-light);
+  --secondary : var(--secondary-light);
+  --icone-ld : var(--icone-ld-light);
+  --profile-border : var(--profile-border-light);
+  --lang-border : var(--lang-border-light);
+  --firma : var(--firma-light);
+  --background-skill : var(--background-skill-light);
+  --track-scrollbar : var(--track-scrollbar-light);
+  --thumb-scrollbar : var(--thumb-scrollbar-light);
+  --hover-scrollbar : var(--hover-scrollbar-light);
+}
+
+.dark-theme {
+  --text-color: var(--text-color-dark);
+  --background-site : var(--background-site-dark);
+  --background-popup : var(--background-popup-dark);
+  --background-navbar : var(--background-navbar-dark);
+  --border-navbar : var(--border-navbar-dark);
+  --primary : var(--primary-dark);
+  --secondary : var(--secondary-dark);
+  --icone-ld : var(--icone-ld-dark);
+  --profile-border : var(--profile-border-dark);
+  --lang-border : var(--lang-border-dark);
+  --firma : var(--firma-dark);
+  --background-skill : var(--background-skill-dark);
+  --track-scrollbar : var(--track-scrollbar-dark);
+  --thumb-scrollbar : var(--thumb-scrollbar-dark);
+  --hover-scrollbar : var(--hover-scrollbar-dark);
+}

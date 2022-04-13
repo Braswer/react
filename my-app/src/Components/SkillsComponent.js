@@ -75,27 +75,29 @@ class SkillBoard extends Component {
         });
         
         return (
-            <div className='container'>
-                <div className='row'>
-                    <div className='col-12'>
-                        <h3>Skills</h3>
-                        <hr />
+            <div className='texts'>
+                <div className='container'>
+                    <div className='row'>
+                        <div className='col-12'>
+                            <h1>Skills</h1>
+                            <hr />
+                        </div>
                     </div>
-                </div>
-                <div className='row'>
-                    {develop}
-                </div>
-                <div className='row'>
-                    {cms}
-                </div>
-                <div className='row'>
-                    {lang}
-                </div>
-                <div className='row'>
-                    {more}
-                </div>
-                <div className='row'>
-                    {coming}
+                    <div className='row'>
+                        {develop}
+                    </div>
+                    <div className='row'>
+                        {cms}
+                    </div>
+                    <div className='row'>
+                        {lang}
+                    </div>
+                    <div className='row'>
+                        {more}
+                    </div>
+                    <div className='row'>
+                        {coming}
+                    </div>
                 </div>
             </div>
         );

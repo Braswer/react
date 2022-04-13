@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LDToggle from "./LdToggleComponent";
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 
@@ -8,9 +9,10 @@ class Header extends Component {
         super(props);
 
         this.state = {
-            isNavOpen: false
+            isNavOpen: true
         }
         this.toggleNav = this.toggleNav.bind(this);
+        this.closeNavbar = this.closeNavbar.bind(this);
     }
 
     toggleNav() {
@@ -19,36 +21,56 @@ class Header extends Component {
         });
     }
 
+    closeNavbar() {
+        if (this.state.isNavOpen !== true) {
+            this.toggleNavbar();
+        }
+    }
+
 
     render() {
+
         return(
             <header className="sidenav">
-                <Navbar dark expand="md">
-                    <div className='container'>
+                <Navbar expand="lg">
+                    <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                     <NavbarBrand className="mr-auto" href="/">
-                        <img src='assets/images/logo.png' height="30" width="41" alt="Ristorante Con Fusion" />
+                        <img className="profile img-fluid" src="../assets/images/moon.png" alt="profile" />
                     </NavbarBrand>
-                    <Collapse isOpen={this.state.isNavOpen} navbar>
-                        <Nav navbar>
+                    <NavbarBrand><LDToggle /></NavbarBrand>
+                    <NavbarBrand><button id="langen" class="langen" onclick="window.location.href='en'"></button></NavbarBrand>
+                    <NavbarBrand><div id="firma" class="firma"></div></NavbarBrand>
+                    <Collapse isOpen={!this.state.isNavOpen} navbar>
+                        <Nav className="buttons">
                             <NavItem>
-                                <NavLink className="nav-link" to="/home">
-                                    <span className="fa fa-home fa-lg"></span> Home
+                                <NavLink onClick={this.closeNavbar} className="nav-link btn button1" to="/home">
+                                    Home
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/aboutus">
-                                    <span className="fa fa-info fa-lg"></span> About Us
+                                <NavLink onClick={this.closeNavbar} className="nav-link btn button2" to="/experiences">
+                                    Esperienze
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/menu">
-                                    <span className="fa fa-list fa-lg"></span> Menu
+                                <NavLink onClick={this.closeNavbar} className="nav-link btn button3" to="/skills">
+                                    Conoscenze
                                 </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="nav-link" to="/contactus">
-                                    <span className="fa fa-address-card fa-lg"></span> Contact Us
+                                <NavLink onClick={this.closeNavbar} className="nav-link btn button4" to="/website">
+                                    Website
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink onClick={this.closeNavbar} className="nav-link btn button5" to="/certificates">
+                                    Certificati
+                                </NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink onClick={this.closeNavbar} className="nav-link btn button6" to="/portfolio">
+                                    Portfolio
                                 </NavLink>
                             </NavItem>
                         </Nav>
