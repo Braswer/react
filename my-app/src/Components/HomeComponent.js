@@ -1,13 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
+import { withTranslation } from "react-i18next";
 
-class Home extends Component {
-    render() {
+const Home = ({ t }) => {
         return(
             <div className="texts">
                 <div className="container">
                     <div id="sezionepersonale" className="personal">
                         <div className="headpers typewriter">
-                            <h1 className="writed1">Benvenuti, sono</h1>                       
+                            <h1 className="writed1">{t("home.line1")}</h1>                       
                         </div>
                         <div className="lorenzo typewriter">
                             <h1 className="writed2">Lorenzo</h1>
@@ -16,22 +16,17 @@ class Home extends Component {
                             <h1 className="writed3 surname">CIPRIANI</h1>
                         </div>
                         <div className="presentation">
-                                28 anni, nato a Roma.<br /><br />Fin da piccolo ho sempre coltivato la passione per l'informatica. I videogiochi 
-                                e la necessità di assemblare PC sempre più potenti hanno rappresentato la spinta verso lo studio delle 
-                                componenti hardware e software.<br /><br />Dopo essermi laureato in Scienze politiche, ed aver svolto 
-                                i più disparati tipi di lavoro al fine di un'indipendenza economica, sono partito direzione Dublino, esperienza che ha 
-                                determinato una profonda crescita personale e culturale.<br /><br />Il ritorno a Roma e la necessità di cambiare vita mi hanno 
-                                avvicinato al mondo dello sviluppo web, impegno intensificato dalla perdita del lavoro a causa del lockdown. Ho iniziato studiando i principali CMS e mi sono 
-                                cimentato nella realizzazione di siti web come freelancer. Da quel momento ho capito che questo era ciò che avrei voluto fare 
-                                nella vita e ho iniziato a studiare gli strumenti necessari a costruire la mia carriera come sviluppatore web. <br /><br />
-                                E questo è solo l'inizio...     
+                            {t("home.description.row1")}<br /><br />
+                            {t("home.description.row2")}<br /><br />
+                            {t("home.description.row3")}<br /><br />
+                            {t("home.description.row4")}<br /><br />
+                            {t("home.description.row5")}
                         </div>
                     </div>
                 </div>
             </div>
 
         )
-    }
 }
 
-export default Home
+export default withTranslation()(Home);

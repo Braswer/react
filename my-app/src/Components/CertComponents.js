@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { withTranslation } from "react-i18next";
 
 
 class Cert extends Component {
     render() {
+        const { t } = this.props
         const certificateslink = this.props.certificates.map((certificate) => {
             return (
                 <div key={certificate.id}>
@@ -23,7 +25,7 @@ class Cert extends Component {
                 <div className='container'>
                     <div className='row'>
                         <div className='col-12'>
-                            <h1>Certificati</h1>
+                            <h1>{t("header.certifications")}</h1>
                         </div>
                     </div>
                     <div className='row'>
@@ -37,4 +39,6 @@ class Cert extends Component {
     }
 }
 
-export default Cert
+const CertTrans = withTranslation()(Cert);
+
+export default CertTrans

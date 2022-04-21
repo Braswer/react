@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import LanguageSelector from "./LangSelectorComponent";
 import LDToggle from "./LdToggleComponent";
 import { Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import { withTranslation } from "react-i18next";
 
 class Header extends Component {
 
@@ -30,47 +32,49 @@ class Header extends Component {
 
     render() {
 
+        const { t } = this.props;
+
         return(
             <header className="sidenav">
                 <Navbar expand="lg">
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
-                    <NavbarBrand className="mr-auto" href="/">
+                    <NavbarBrand className="mr-auto">
                         <img className="profile img-fluid" src="../assets/images/moon.png" alt="profile" />
                     </NavbarBrand>
                     <NavbarBrand><LDToggle /></NavbarBrand>
-                    <NavbarBrand><button id="langen" class="langen" onclick="window.location.href='en'"></button></NavbarBrand>
+                    <NavbarBrand><LanguageSelector /></NavbarBrand>
                     <NavbarBrand><div id="firma" class="firma"></div></NavbarBrand>
                     <Collapse isOpen={!this.state.isNavOpen} navbar>
                         <Nav className="buttons">
                             <NavItem>
                                 <NavLink onClick={this.closeNavbar} className="nav-link btn button1" to="/home">
-                                    Home
+                                    {t("header.home")}
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink onClick={this.closeNavbar} className="nav-link btn button2" to="/experiences">
-                                    Esperienze
+                                    {t("header.experience")}
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink onClick={this.closeNavbar} className="nav-link btn button3" to="/skills">
-                                    Conoscenze
+                                    {t("header.knowledge")}
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink onClick={this.closeNavbar} className="nav-link btn button4" to="/website">
-                                    Website
+                                    {t("header.website")}
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink onClick={this.closeNavbar} className="nav-link btn button5" to="/certificates">
-                                    Certificati
+                                    {t("header.certifications")}
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink onClick={this.closeNavbar} className="nav-link btn button6" to="/portfolio">
-                                    Portfolio
+                                    {t("header.portfolio")}
                                 </NavLink>
                             </NavItem>
                         </Nav>
@@ -82,7 +86,9 @@ class Header extends Component {
     }
 }
 
-export default Header
+const HeaderTrans = withTranslation()(Header)
+
+export default HeaderTrans
 
 
 /*

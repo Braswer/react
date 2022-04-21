@@ -1,16 +1,18 @@
-import React, { Component } from "react";
-import Header from "./HeaderComponent";
+import React, { Component, Suspense } from "react";
+import HeaderTrans from "./HeaderComponent";
 import Home from "./HomeComponent";
 import Web from "./WebsiteComponent";
 import SkillBoard from "./SkillsComponent";
-import Experiences from "./ExperienceComponent";
-import Cert from "./CertComponents";
+import ExpTrans from "./ExperienceComponent";
+import CertTrans from "./CertComponents";
 import Port from "./PortComponent";
 import { SKILLS } from '../shared/skills';
 import { EXPERIENCES } from "../shared/experiences";
+import { EXPERIENCESENG } from "../shared/experienceseng";
 import { CERTIFICATES } from "../shared/certificates";
-import { PORTFOLIOS } from "../shared/portfolio"
+import { PORTFOLIOS } from "../shared/portfolio";
 import { Switch, Route, Redirect } from 'react-router-dom';
+import "../i18n";
 
 
 class Main extends Component {
@@ -19,6 +21,7 @@ class Main extends Component {
         this.state = {
           skills: SKILLS,
           experiences: EXPERIENCES,
+          experienceseng: EXPERIENCESENG,
           certificates: CERTIFICATES,
           portfolios: PORTFOLIOS
         };
@@ -46,13 +49,13 @@ class Main extends Component {
 
         const Experienceslist = () => {
             return (
-                <Experiences experiences={this.state.experiences} />
+                <ExpTrans experiences={this.state.experiences} experienceseng={this.state.experienceseng}/>
             )
         }
 
         const Certlist = () => {
             return (
-                <Cert certificates={this.state.certificates} />
+                <CertTrans certificates={this.state.certificates} />
             )
         }
 
@@ -64,16 +67,18 @@ class Main extends Component {
 
         return(
             <div>
-                <Header />
-                <Switch>
-                    <Route path="/home" component={HomePage} />
-                    <Route exact path="/skills" component={Skillslist} />
-                    <Route exact path="/website" component={WebSite} />
-                    <Route exact path="/experiences" component={Experienceslist} />
-                    <Route exact path="/certificates" component={Certlist} />
-                    <Route exact path="/portfolio" component={Portlist} />
-                    <Redirect to="/home" />
-                </Switch>   
+                <Suspense fallback={null}>
+                    <HeaderTrans />
+                    <Switch>
+                        <Route path="/home" component={HomePage} />
+                        <Route exact path="/skills" component={Skillslist} />
+                        <Route exact path="/website" component={WebSite} />
+                        <Route exact path="/experiences" component={Experienceslist} />
+                        <Route exact path="/certificates" component={Certlist} />
+                        <Route exact path="/portfolio" component={Portlist} />
+                        <Redirect to="/home" />
+                    </Switch>   
+                </Suspense>
             </div>
         )
     }
